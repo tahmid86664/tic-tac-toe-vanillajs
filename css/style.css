@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Tourney:wght@200;300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Tourney', cursive;
+}
+
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.left {
+  flex: 0.6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  font-size:80px;
+  color: #190355;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.left > h1 > span {
+  font-size: 30px;
+}
+
+button {
+  width: 200px;
+  padding: 10px; 
+  margin-top: 70px;
+  font-size: 25px;
+  font-weight: 500;
+  background-color: white;
+  border-radius: 25px;
+  border: 2px solid #190355;
+  color: #190355;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+button:hover {
+  color: white;
+  background-color: #190355;
+}
+
+
+.right {
+  flex: 0.4;
+  height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+
+.board {
+  width: 80%;
+  min-width: 400px;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+}
+
+.board__header {
+  width: 100%;
+  display: flex;
+  font-size: 25px;
+  font-weight: 500;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #190355;
+  color: #190355;
+}
+
+.player__x {
+  flex: 0.5;
+  padding: 5px;
+  text-align: center;
+}
+
+.player__o {
+  flex: 0.5;
+  padding: 5px;
+  text-align: center;
+}
+
+.board__tiles {
+  width: 100%;
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 0px;
+  flex-grow: 1;
+}
+
+.board__tile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 80px;
+  font-weight: 700;
+  color: #190355;
+  transition: all 0.3s ease;
+}
+
+.board__tile:hover {
+  background-color: #947ed1;
+  color: white;
+}
+
+.board__tile:not(:nth-child(3n)) {
+  border-right: 2px solid #492b9c;
+}
+
+.board__tile:not(:nth-last-child(-n+3)){
+  border-bottom: 2px solid #492b9c;
+}
+
+.board__tile__O {
+  color: #00b69e;
+}
+
+.board__tile__X {
+  color: #0777f7;
+}
+
+.player__active {
+  background-color: #492b9c;
+  color: white;
+}
+
+
+/* media queries */
+@media screen and (max-width: 768px) and (min-width: 368px) {
+  .wrapper {
+    flex-direction: column;
+  }
+
+  .left {
+    flex: 0.3;
+  }
+
+  h1 {
+    font-size: 40px;
+  }
+
+  .left > h1 > span {
+    font-size: 20px;
+  }
+
+  button {
+    font-size: 20px;
+    margin-top: 15px;
+  }
+
+  .right {
+    flex: 0.7;
+  }
+
+  .board {
+    
+    height: 400px;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .wrapper {
+    flex-direction: column;
+  }
+
+  .left {
+    flex: 0.3;
+  }
+
+  h1 {
+    font-size: 40px;
+  }
+
+  .left > h1 > span {
+    font-size: 20px;
+  }
+
+  button {
+    font-size: 18px;
+    margin-top: 15px;
+  }
+
+  .right {
+    flex: 1;
+    height: 400px;
+  }
+
+  .board {
+    min-width: 300px;
+    height: 300px;
+  }
+
+  .board__tile {
+    font-size: 60px;
+  }
+}

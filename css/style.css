@@ -70,6 +70,32 @@ button:hover {
   flex-direction: column;
 }
 
+.displayNone {
+  display: none;
+}
+
+.winningSection {
+  text-align: center;
+  font-size: 70px;
+  font-weight: 300;
+  color: #190355;
+  animation: winningTextAnim 2s infinite ;
+  animation-timing-function: linear;
+}
+
+@keyframes winningTextAnim {
+  50% {
+    font-size: 74px;
+    font-weight: 500;
+    color: #920768;
+  } 
+  100% {
+    font-size: 78px;
+    font-weight: 700;
+    color: #a30808;
+  }
+}
+
 .board__header {
   width: 100%;
   display: flex;
@@ -108,12 +134,12 @@ button:hover {
   font-size: 80px;
   font-weight: 700;
   color: #190355;
+  cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .board__tile:hover {
-  background-color: #947ed1;
-  color: white;
+  background-color: #eeeeee;
 }
 
 .board__tile:not(:nth-child(3n)) {
@@ -125,11 +151,11 @@ button:hover {
 }
 
 .board__tile__O {
-  color: #00b69e;
+  color: #05bfc5;
 }
 
 .board__tile__X {
-  color: #0777f7;
+  color: #6d06f5;
 }
 
 .player__active {
@@ -138,7 +164,7 @@ button:hover {
 }
 
 
-/* media queries */
+/* ======================= media queries ======================= */
 @media screen and (max-width: 768px) and (min-width: 368px) {
   .wrapper {
     flex-direction: column;
@@ -149,7 +175,7 @@ button:hover {
   }
 
   h1 {
-    font-size: 40px;
+    font-size: 50px;
   }
 
   .left > h1 > span {
